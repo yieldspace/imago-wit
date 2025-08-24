@@ -1,0 +1,25 @@
+package yieldspace:imago@0.1.0;
+
+@since(version = 0.1.0)
+interface service {
+  type service-id = u32;
+
+  enum restart-state {
+    SUCESS,
+    FAILED,
+  }
+
+  resource service {
+    constructor(id: service-id);
+
+    restart: func() -> restart-state;
+  }
+
+  current: func() -> service;
+}
+
+@since(version = 0.1.0)
+world host {
+  @since(version = 0.1.0)
+  import service;
+}
