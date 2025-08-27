@@ -1,0 +1,6 @@
+package imago:host@0.1.0;
+
+@since(version = 0.1.0)
+interface network {
+
+}

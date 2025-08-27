@@ -1,0 +1,9 @@
+package imago:host@0.1.0;
+
+interface sysinfo {
+  resource cpu {
+    usage: func() -> f32;
+  }
+
+  cpus: func() -> list<cpu>;
+}

@@ -1,0 +1,13 @@
+package imago:nanokvm@0.1.0;
+
+@since(version = 0.1.0)
+interface capture {
+  @since(version = 0.1.0)
+  capture: func() -> string;
+}
+
+@since(version = 0.1.0)
+world imports {
+  @since(version = 0.1.0)
+  import capture;
+}

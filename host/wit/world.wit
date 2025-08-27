@@ -1,0 +1,11 @@
+package imago:host@0.1.0;
+
+@since(version = 0.1.0)
+world imports {
+  @since(version = 0.1.0)
+  import service;
+  @since(version = 0.1.0)
+  import network;
+  @since(version = 0.1.0)
+  import sysinfo;
+}

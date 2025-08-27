@@ -1,5 +1,3 @@
-package yieldspace:imago@0.1.0;
-
 @since(version = 0.1.0)
 interface service {
   type service-id = u32;
@@ -16,10 +14,4 @@ interface service {
   }
 
   current: func() -> service;
-}
-
-@since(version = 0.1.0)
-world host {
-  @since(version = 0.1.0)
-  import service;
 }
