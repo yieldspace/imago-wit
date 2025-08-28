@@ -1,9 +1,21 @@
 package imago:host@0.1.0;
 
 interface sysinfo {
+  resource system {
+    constructor();
+
+    refresh: func();
+    refresh-cpus: func();
+    refresh-memory: func();
+
+    memory-total: func() -> u64;
+    memory-used: func() -> u64;
+    memory-free: func() -> u64;
+    memory-available: func() -> u64;
+    cpus: func() -> list<cpu>;
+  }
+
   resource cpu {
     usage: func() -> f32;
   }
-
-  cpus: func() -> list<cpu>;
 }
