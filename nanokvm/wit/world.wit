@@ -2,12 +2,24 @@ package imago:nanokvm@0.1.0;
 
 @since(version = 0.1.0)
 interface capture {
+  use wasi:http/types@0.2.7.{incoming-body};
   @since(version = 0.1.0)
-  capture: func() -> string;
+  capture: func(token: string) -> result<incoming-body>;
+}
+
+@since(version = 0.1.0)
+interface auth {
+  resource auth {
+    constructor(username: string, password: string);
+    /// Returns an authentication token for the user. this token is refreshed if it has expired.
+    get-auth-token: func() -> string;
+  }
 }
 
 @since(version = 0.1.0)
 world imports {
+  @since(version = 0.1.0)
+  import wasi:http/outgoing-handler@0.2.7;
   @since(version = 0.1.0)
   import capture;
 }
