@@ -22,4 +22,6 @@ world imports {
   import wasi:http/outgoing-handler@0.2.7;
   @since(version = 0.1.0)
   import capture;
+  @since(version = 0.1.0)
+  import auth;
 }
