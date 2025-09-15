@@ -6,7 +6,7 @@ interface capture {
   use auth.{auth};
 
   @since(version = 0.1.0)
-  capture: func(auth: auth) -> result<incoming-body>;
+  capture: func(auth: borrow<auth>) -> result<incoming-body>;
 }
 
 @since(version = 0.1.0)
