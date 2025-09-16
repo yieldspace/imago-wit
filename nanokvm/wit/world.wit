@@ -6,15 +6,15 @@ interface capture {
   use auth.{auth};
 
   @since(version = 0.1.0)
-  capture: func(auth: borrow<auth>) -> result<input-stream>;
+  capture: func(auth: borrow<auth>) -> result<tuple<u64, input-stream>, string>;
 }
 
 @since(version = 0.1.0)
 interface auth {
   resource auth {
-    constructor(username: string, password: string);
-    /// Returns an authentication token for the user. this token is refreshed if it has expired.
+    constructor(hostname: string, username: string, password: string);
     get-auth-token: func() -> string;
+    get-hostname: func() -> string;
   }
 }
 
